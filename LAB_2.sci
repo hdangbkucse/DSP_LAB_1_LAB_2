@@ -143,6 +143,93 @@ xlabel("Time n");
 ylabel("Amplitude");
 xgrid();
 
+//ex8
+
+clear;
+clc;
+
+// Original signal x(n)
+// x(-2)=1, x(-1)=-2, x(0)=3, x(1)=6
+
+
+// ======================================
+// 1. y1(n) = x(-n): Time reversal
+// ======================================
+n1 = -2:2;
+
+x1 = [1, -2, 3, 6, 0];
+y1 = [0, 6, 3, -2, 1];
+
+scf(0);
+clf();
+
+subplot(2, 1, 1);
+plot2d3(n1, x1);
+title("Original Signal x(n)");
+xlabel("Time n");
+ylabel("Amplitude");
+xgrid();
+
+subplot(2, 1, 2);
+plot2d3(n1, y1);
+title("y1(n) = x(-n)");
+xlabel("Time n");
+ylabel("Amplitude");
+xgrid();
+
+
+// ======================================
+// 2. y2(n) = x(n+3): Shift left by 3
+// ======================================
+n2 = -5:1;
+
+x2 = [0, 0, 0, 1, -2, 3, 6];
+y2 = [1, -2, 3, 6, 0, 0, 0];
+
+scf(1);
+clf();
+
+subplot(2, 1, 1);
+plot2d3(n2, x2);
+title("Original Signal x(n)");
+xlabel("Time n");
+ylabel("Amplitude");
+xgrid();
+
+subplot(2, 1, 2);
+plot2d3(n2, y2);
+title("y2(n) = x(n+3)");
+xlabel("Time n");
+ylabel("Amplitude");
+xgrid();
+
+
+// ======================================
+// 3. y3(n) = 2*x(-n-2)
+// ======================================
+n3 = -3:1;
+
+x3 = [0, 1, -2, 3, 6];
+y3 = [12, 6, -4, 2, 0];
+
+scf(2);
+clf();
+
+subplot(2, 1, 1);
+plot2d3(n3, x3);
+title("Original Signal x(n)");
+xlabel("Time n");
+ylabel("Amplitude");
+xgrid();
+
+subplot(2, 1, 2);
+plot2d3(n3, y3);
+title("y3(n) = 2*x(-n-2)");
+xlabel("Time n");
+ylabel("Amplitude");
+xgrid();
+
+
 
 
 
